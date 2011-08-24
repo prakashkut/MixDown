@@ -70,7 +70,7 @@ def callPythonCommand(namespace, function, target, options):
         mdPath = os.path.join(mixDownPath, "md")
         if not mdPath in sys.path:
             sys.path.insert(0, mdPath)
-        importedNamespace = __import__(namespace)
+        importedNamespace = __import__("md."+namespace)
 
     try:
         target.pythonCallInfo.success = False
